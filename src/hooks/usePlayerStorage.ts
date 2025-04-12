@@ -3,11 +3,21 @@ import {auth, db} from "../firebase"
 import {collection, getDocs, query} from "firebase/firestore"
 import type {FavoritePlayer} from "../models/player"
 
+/**
+ * Custom hook to retrieve the user's list of favorite players from Firestore.
+ *
+ * @returns An object with:
+ * - `favorites`: the list of favorite players
+ * - `loading`: boolean indicating if the data is still loading
+ */
 export function useFavorites() {
     const [favorites, setFavorites] = useState<FavoritePlayer[]>([])
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
+        /**
+         * Fetches the favorite players from Firestore for the authenticated user.
+         */
         const fetchFavorites = async () => {
             const uid = auth.currentUser?.uid
             if (!uid) {

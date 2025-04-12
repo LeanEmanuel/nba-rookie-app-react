@@ -28,6 +28,11 @@ const Login: React.FC = () => {
     const history = useHistory()
     const [presentToast] = useIonToast()
 
+    /**
+     * Login screen for NBA Rookie App.
+     * Allows the user to log in with email and password using Firebase Auth.
+     * Shows toast messages for validation and errors.
+     */
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault()
 

@@ -12,6 +12,10 @@ import { home, star } from "ionicons/icons"
 import Home from "./Home"
 import Favorites from "./Favorites"
 
+/**
+ * Tabs layout component for NBA Rookie App.
+ * Defines routes and navigation between Home and Favorites using a bottom tab bar.
+ */
 const Tabs: React.FC = () => {
     return (
         <IonTabs>

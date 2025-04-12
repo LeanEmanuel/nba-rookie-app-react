@@ -14,6 +14,10 @@ import {
 import {useFavorites} from "../hooks/usePlayerStorage"
 import {logOutOutline} from "ionicons/icons";
 
+/**
+ * Favorites page that displays a list of the user's favorite NBA players.
+ * Includes logout functionality and handles loading state.
+ */
 const Favorites: React.FC = () => {
     const {favorites, loading} = useFavorites()
 

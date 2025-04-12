@@ -15,10 +15,17 @@ import { useAuth } from "../contexts/AuthContext"
 import { useHistory } from "react-router"
 import {logOutOutline} from "ionicons/icons";
 
+/**
+ * Home page shown after successful login.
+ * Welcomes the user and provides a brief explanation of the app.
+ */
 const Home: React.FC = () => {
     const { currentUser, logout } = useAuth()
     const history = useHistory()
 
+    /**
+     * Logs the user out and redirects to the login page.
+     */
     const handleLogout = async () => {
         try {
             await logout()
