@@ -44,9 +44,12 @@ const Login: React.FC = () => {
             setBusy(true)
             await login(email, password)
             history.push("/tabs/home")
-        } catch (error: any) {
-            presentToast({
-                message: error.message || "Error al iniciar sesión",
+        } catch (error: unknown) {
+            const message =
+                error instanceof Error ? error.message : "Error al iniciar sesión"
+
+            await presentToast({
+                message,
                 duration: 3000,
                 color: "danger",
             })
